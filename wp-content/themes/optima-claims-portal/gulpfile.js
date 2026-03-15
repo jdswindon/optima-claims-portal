@@ -58,34 +58,52 @@ gulp.task("styles", function () {
 var cache;
 
 // Core scripts
+const { pathToFileURL, fileURLToPath } = require("url");
+
+function fileUrlResolver() {
+  return {
+    name: "file-url-resolver",
+    resolveId(source) {
+      if (typeof source === "string" && source.startsWith("file://")) {
+        return fileURLToPath(source); // turns file:///C:/... into C:\... (or C:/...)
+      }
+      return null;
+    },
+  };
+}
+
 gulp.task("core-scripts", async function () {
   const coreFiles = glob.sync("_assets/js/core/*.js");
 
-  // Create a virtual entry file that imports all core JS files
   const virtualEntryCode = coreFiles
-    .map(f => `import '${path.resolve(f)}';`)
-    .join('\n');
+    .map((f) => {
+      const abs = path.resolve(f);
+      const href = pathToFileURL(abs).href; // file:///C:/...
+      return `import ${JSON.stringify(href)};`;
+    })
+    .join("\n");
+
+  const plugins = [
+    virtual({ "virtual-entry.js": virtualEntryCode }),
+    fileUrlResolver(),        // <-- IMPORTANT: must come before nodeResolve
+    nodeResolve(),
+    commonjs(),
+    ...(argv.production ? [terser()] : []),
+  ];
 
   const bundle = await rollup({
-    input: 'virtual-entry.js',
-    plugins: [
-      nodeResolve(),
-      commonjs(),
-      virtual({
-        'virtual-entry.js': virtualEntryCode
-      }),
-      (argv.production ? terser() : null) // Add this line to minify the output
-    ],
+    input: "virtual-entry.js",
+    plugins,
     cache: cache,
   });
 
   cache = bundle;
 
   await bundle.write({
-    file: 'dist/production-dist.js',
-    format: 'iife',   // single bundle compatible format
+    file: "dist/production-dist.js",
+    format: "iife",
     sourcemap: false,
-    name: 'output',
+    name: "output",
   });
 
   browserSync.reload();
