@@ -1,0 +1,75 @@
+{#
+  Title: Hero
+  Description: Hero
+  Category: formatting
+  Icon: cover-image
+  Keywords: hero runner
+  Mode: edit
+  SupportsAlign: center
+  SupportsMode: false
+  SupportsMultiple: false
+#}
+
+<div class="relative flex bg-gray-100">
+
+	{% include "_atoms/picture.twig" with {
+      source: featured_image,
+      lazyload: false,
+      breakpoints: {
+        "1800px" : {
+          w: 2200,
+          h: 800,
+          crop: 'center'
+        },
+        "1530px" : {
+          w: 1800,
+          h: 500,
+          crop: 'center'
+        },
+        "1280px" : {
+          w: 1530,
+          h: 500,
+          crop: 'center'
+        },
+        "1024px" : {
+          w: 1280,
+          h: 500,
+          crop: 'center'
+        },
+        "768px" : {
+          w: 1024,
+          h: 500,
+          crop: 'center'
+        },
+        "640px" : {
+          w: 768,
+          h: 400,
+          crop: 'center'
+        },
+        "1px" : {
+          w: 640,
+          h: 640,
+          crop: 'center'
+        },
+      },
+      img: {
+        classes: 'w-full h-auto',
+        w: 640,
+        h: 640,
+        crop: 'center',
+        alt: post_title
+      }
+    }
+    %}
+
+	<div class="absolute z-10 p-8 text-center transform -translate-x-1/2 -translate-y-1/2 bg-blue-200 rounded-xl bg-opacity-70 top-1/2 left-1/2">
+
+		<p class="text-4xl">{{ fields.primary }}</p>
+		<p class="text-2xl">{{ fields.secondary }}</p>
+		<div class="px-4 py-2 mt-8 bg-white rounded-full">
+			{{ '[ald_default calltag=true]' | shortcodes }}
+		</div>
+
+	</div>
+
+</div>

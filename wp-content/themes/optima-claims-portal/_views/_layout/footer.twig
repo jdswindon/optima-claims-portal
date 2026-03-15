@@ -1,0 +1,66 @@
+<footer class="p-4 text-center bg-primary md:p-8 lg:px-0 lg:text-left">
+
+	<div class="container flex-wrap lg:flex">
+
+		<div class="w-full mb-8 lg:w-3/12">
+			<a aria-label="Go to homepage" class="block lg:inline-block" href="{{site.site_url}}">
+				<img class="mx-auto max-w-40" src="{{ options.site_logo.url|resize(400)|towebp }}" alt="{{site.title}} Logo"/>
+			</a>
+		</div>
+
+		<div class="w-full mb-8 lg:w-3/12">
+			<span>Explore</span>
+			<ul>
+				{% for item in primaryMenu.items %}
+					<li class="{{item.class}}">
+						<a href="{{item.url}}">{{item.name}}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		<div class="w-full lg:w-1/2">
+			<p>Address:
+				{{ function('address_stacked') }}</p>
+			<p>Email:
+				<a href="mailto:{{options.site_email}}">{{options.site_email}}</a>
+			</p>
+			<p>{{site.title}}
+				is a registered company in England.</p>
+
+			{% if options.registered_number %}
+				<p>Registered Number:
+					{{options.registered_number}}</p>
+			{% endif %}
+
+			{% if options.vat_number %}
+				<p>VAT Number:
+					{{options.vat_number}}</p>
+			{% endif %}
+
+		</div>
+
+	</div>
+
+	{# Please do not remove the md:pr-24 as we do not want the back to top button to cover the Adtrak logo - Thanks! #}
+	<div class="container flex flex-col md:flex-row items-center md:justify-between md:pr-24 mt-16">
+		<p class="md:pr-12">&copy;
+			{{site.title}}
+			{{ 'now' | date('Y') }}. All Rights Reserved</p>
+
+		<a class="block w-28 min-w-28 adtrak mt-2 md:mt-0" href="https://www.adtrak.co.uk/website-referral/" target="_blank" rel="noreferrer noopener">
+			<span class="sr-only">Webiste by Adtrak</span>
+			{{function('get_adtrak_logo_new','navy',true)}}
+		</a>
+	</div>
+
+</footer>
+
+<a id="back-top" class="fixed bottom-2 right-2 z-50 px-3 pb-2 pt-0.5 -mb-20 text-center transition-all duration-1000 bg-primary-light opacity-0 rounded hover:opacity-75" href="javascript:">
+	<span class="text-sm text-black no-underline">
+		{{ icon( 'angle-up', 'w-4 h-4 ') }}
+		<span class="block text-sm font-medium -mt-1.5">Top</span>
+	</span>
+</a>
+
+<div id="pixel-to-watch"></div>

@@ -1,0 +1,11 @@
+{
+  "require": {
+    "timber/timber": "^1.24.2",
+    "palmiak/timber-acf-wp-blocks": "^1.15"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  }
+}

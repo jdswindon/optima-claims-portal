@@ -1,0 +1,100 @@
+{# Wrap primary menu items under "Services" #}
+{% set servicesMenu = {
+    name: 'Services',
+    slug: 'services',
+    children: primaryMenu.items
+} %}
+
+{# Only create Information group if secondary menu has items #}
+{% if secondaryMenu.items is not empty %}
+    {% set informationMenu = {
+        name: 'Information',
+        slug: 'information',
+        children: secondaryMenu.items
+    } %}
+{% else %}
+    {% set informationMenu = null %}
+{% endif %}
+
+{# Build the mobileMenu array, skipping null groups #}
+{% set mobileMenu = [servicesMenu] %}
+{% if informationMenu %}
+    {% set mobileMenu = mobileMenu|merge([informationMenu]) %}
+{% endif %}
+
+{# Set addition classes for menu items - classes already set within tags are related to the nav functionality rather than style #}
+{% set navClasses = {
+    mobNav: '',
+    scrollContainer: 'p-8 pb-28',
+    menuButtons: 'font-bold',
+    menuTab: 'pb-4',
+    li: '',
+    link: 'px-6 py-4 font-bold flex items-center justify-between relative w-full no-underline',
+    subMenu: '',
+    subArrow: 'absolute top-0 right-0 z-10 px-0 text-center cursor-pointer w-20 h-full flex justify-center items-center',
+    childLink: ''
+} %}
+
+{# Recursive Macro - Automatically handles large menu depths #}
+{% macro render_menu(items, navClasses) %}
+
+    {% import _self as menus %}
+
+    {% for item in items %}
+        <li class="{{ item.class }} {{ navClasses.li }}">
+
+            <a href="{{ item.link }}" class="{{ navClasses.childLink|default(navClasses.link) }}">
+                {{ item.name }}
+
+                {% if item.children %}
+                    <span class="sub-arrow {{ navClasses.subArrow }}">{{ icon('angle-down') }}</span>
+                {% else %}
+                    <span class="{{ navClasses.subArrow }}">{{ icon('angle-right') }}</span>
+                {% endif %}
+            </a>
+
+            {% if item.children %}
+                <ul class="sub-menu hidden {{ navClasses.subMenu }}">
+                    {{ menus.render_menu(item.children, navClasses) }}
+                </ul>
+            {% endif %}
+
+        </li>
+    {% endfor %}
+{% endmacro %}
+
+{# Allow use of macro in this file #}
+{% import _self as menus %}
+
+<nav class="mob-nav lg:hidden overflow-y-scroll fixed top-0 bottom-0 right-0 w-full md:max-w-screen-sm h-full transform transition duration-400 translate-x-[101%] z-[8888] flex flex-col {{ navClasses.mobNav }}">
+
+    <div class="scroll-container {{ navClasses.scrollContainer }}">
+
+        {# Mobile Menu Buttons #}
+        <ul class="menu-btns flex mt-12 mb-6 space-x-4">
+            {% for item in mobileMenu %}
+                {% if item.children %}
+                    <li class="{{item.class}}">
+                        <button class="btn btn-secondary menu-tab-btn {{ navClasses.menuButtons }} {{ loop.first ? 'active' }}" data-menutab="{{ item.slug }}" aria-label="{{ item.name }}">
+                            <span class="{{ textClass }}">{{ item.name }}</span>
+                        </button>
+                    </li>	
+                {% endif %}	
+            {% endfor %}
+        </ul>
+
+        {# Mobile Menu Nav #}
+        {% for item in mobileMenu %}
+            {% if item.children %}
+                <ul class="menu-tab menu-tab-{{ item.slug }} hidden {{ navClasses.menuTab }} {{ loop.first ? 'active' }}" data-menutabbtn="{{ item.slug }}">
+                    {# if menu item has children render the macro #}
+                    {{ menus.render_menu(item.children, navClasses) }}
+                </ul>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+    <div data-mobile-menu-toggle class="mob-nav-underlay"></div>
+
+</nav>

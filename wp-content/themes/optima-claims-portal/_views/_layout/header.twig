@@ -1,0 +1,86 @@
+<header class="pt-10 lg:pt-0">
+
+	<div class="hidden bg-primary top-bar lg:block">
+
+		<div class="container">
+
+		{# Desktop secondary navigation #}
+
+			<nav id="menu-secondary" class="container hidden menu lg:block" aria-labelledby="secondary-navigation">
+				<span class="sr-only" id="secondary-navigation">Secondary Navigation</span>
+				<ul class="flex flex-wrap justify-center w-full menu-secondary menu-secondary-js">
+					{% for item in secondaryMenu.items %}
+						<li class="{{item.class}}">
+							<a href="{{item.link}}" class="relative text-gray-500 block p-4 hover:text-black focus:text-black {{ item.current ? 'text-red-500' }}">
+								{{item.name}}
+								{% if item.children %}
+									{{ icon('angle-down') }}
+								{% endif %}
+							</a>
+							{% if item.children %}
+								<ul class="sub-menu">
+									{% for child in item.children %}
+										<li class="{{child.class}}">
+											<a class="block p-4 text-gray-500 hover:text-black focus:text-black" href="{{child.link}}">{{child.name}}</a>
+										</li>
+									{% endfor %}
+								</ul>
+							{% endif %}
+						</li>
+					{% endfor %}
+				</ul>
+			</nav>
+
+		</div>
+
+	</div>
+
+	<div class="container flex-wrap items-center justify-between lg:py-4 lg:flex">
+
+		{# Logo #}
+
+		<a aria-label="Go to homepage" class="block lg:inline-block" href="{{site.site_url}}">
+			<img class="mx-auto max-w-40" src="{{ options.site_logo.url|resize(400)|towebp }}" alt="{{site.title}} Logo"/>
+		</a>
+
+		{# Phone number #}
+		
+		<div class="hidden lg:block">
+			{{ icon('phone') }}
+			{{ '[ald_default calltag=true]' | shortcodes }}
+		</div>
+
+	</div>
+
+	<div class="hidden bg-secondary lg:block">
+
+	{# Desktop primary navigation #}
+
+		<nav id="menu-primary" class="container menu" aria-labelledby="primary-navigation">
+			<span class="sr-only" id="primary-navigation">Primary Navigation</span>
+			<ul class="flex flex-wrap justify-center w-full menu-primary">
+				{% for item in primaryMenu.items %}
+					<li class="{{item.class}}">
+						<a href="{{item.link}}" class="relative block p-4 hover:text-black focus:text-black {{ item.current ? 'text-red-500' }}">
+							{{item.name}}
+							{% if item.children %}
+								{{ icon('angle-down') }}
+							{% endif %}
+						</a>
+						{% if item.children %}
+							<ul class="sub-menu">
+								{% for child in item.children %}
+									<li class="{{child.class}}">
+										<a href="{{child.link}}" class="block p-4 text-gray-500 hover:text-black focus:text-black">{{child.name}}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
+
+	</div>
+
+</header>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html {{site.language_attributes}}>
+
+	<head>
+		<meta charset="{{ site.charset }}">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta
+		name="viewport" content="width=device-width, initial-scale=1">
+
+		{% block htmlheader %}
+			<style>
+				{{source("/dist/main.min.css")}}</style>
+		{% endblock %}
+
+		{% if 'adtrak.agency' in site.link %}
+			<meta name="robots" content="noindex">
+		{% endif %}
+
+		{{ options.google_analytics ? options.google_analytics }}
+
+		{{ options.schema ? options.schema }}
+
+		{{ options.meta_tags ? options.meta_tags }}
+
+		{% include "_layout/schema.twig" %}
+
+		{{ function('wp_head') }}
+		
+	</head>
+
+	<body class="{{ body_class }}">
+
+		{% include "_layout/mobile-nav-2.twig" %}
+
+		<div class="wrapper">
+
+			{% include "_layout/mobile-fixed-bar.twig" %}
+
+			{% block header %}
+				{% include "_layout/header.twig" %}
+			{% endblock %}
+
+			{% block content %}{% endblock %}
+
+			{% block footer %}
+				{% include "_layout/footer.twig" %}
+			{% endblock %}
+
+		</div>
+
+		{{ function('wp_footer') }}
+
+	</body>
+
+</html>

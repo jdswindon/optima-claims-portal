@@ -1,0 +1,15 @@
+{% if options.why_choose_us %}
+
+	<ul class="{{ ulClasses }}">
+
+		{% for item in options.why_choose_us %}
+
+			<li class="relative pl-6 {{ liClasses }}">{{ icon( item.icon, "absolute top-1/2 left-0 transform -translate-y-1/2 " ~ iconClasses ) }}
+
+				{{item.reason}}</li>
+
+		{% endfor %}
+
+	</ul>
+
+{% endif %}

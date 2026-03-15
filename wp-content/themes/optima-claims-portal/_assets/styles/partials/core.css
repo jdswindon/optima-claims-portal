@@ -1,0 +1,70 @@
+/* ---------------------------------------------------
+Core
+--------------------------------------------------- */
+
+body,
+html {
+  min-height: 101%;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans antialiased leading-relaxed text-black;
+}
+
+/* CSS Page Transitions */
+@view-transition {
+  navigation: auto;
+}
+
+/* Uses IntersectionObserver to identify when the viewport has scrolled, and then show back to top */
+#pixel-to-watch {
+  @apply absolute left-0;
+  width: 1px;
+  height: 1px;
+  top: 300px;
+}
+
+.container {
+  @apply w-full ~px-6/12 mx-auto max-w-screen-4xl;
+}
+
+a {
+  @apply transition duration-300;
+}
+
+.ld-absolute {
+  a {
+    @apply absolute top-0 left-0 w-full h-full opacity-0;
+  }
+}
+
+.address {
+  a {
+    @apply block;
+  }
+}
+
+/***********************************************************
+Lazyload **************************************************/
+
+.lazyload,
+.lazyloading {
+  @apply opacity-0;
+}
+
+.lazyloaded {
+  @apply transition duration-300 transform opacity-100;
+}
+
+/***********************************************************
+SVG Icons **************************************************/
+
+.icon {
+  @apply inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}

@@ -1,0 +1,96 @@
+{% for script in options.schema_script %}
+    {% set address = script.schema_address %}
+    <script type="application/ld+json">
+
+    // Business name, address, opening hours, logo social profiles
+    
+    {
+        "@context" : "http://schema.org",
+        "@type": "{{ script.schema_type|default('LocalBusiness') }}",
+    
+        "name" : "{{ script.schema_name|default(site.title|replace({'&amp;':'&'})) }}",
+
+        {% if script.schema_branch_of %}"branchOf" : "{{ script.schema_branch_of }}",{% endif %}
+        
+        {% if options.site_logo.url %}"logo" : "{{ options.site_logo.url }}",{% endif %}
+        
+        {% if script.schema_image.url %}"image" : "{{ script.schema_image.url }}",{% endif %}
+        
+        "url": "{{ site.url }}"{% if address.streetaddress or script.schema_telephone or script.schema_opening_24_hrs or script.schema_opening_hours or script.schema_email or options.site_email or script.vat_number or options.vat_number or script.schema_sameas or schema_description or schema_areas_served %},{% endif %}
+        
+        {% if address.streetaddress %}
+        "address": {
+            "@type": "PostalAddress",
+            {% if address.streetaddress %}"streetAddress": "{{ address.streetaddress }}",{% endif %}
+            {% if address.addresslocality %}"addressLocality": "{{ address.addresslocality }}",{% endif %}
+            {% if address.addressregion %}"addressRegion": "{{ address.addressregion }}",{% endif %}
+            {% if address.postalcode %}"postalCode": "{{ address.postalcode }}"{% endif %}
+        }{% if script.schema_telephone or script.schema_opening_24_hrs or script.schema_opening_hours or script.schema_email or options.site_email or script.vat_number or options.vat_number or script.schema_sameas or schema_description or schema_areas_served %},{% endif %}
+        {% endif %}
+        
+        {% if script.schema_telephone %}"telephone" : "{{ script.schema_telephone }}"{% if script.schema_opening_24_hrs or script.schema_opening_hours or script.schema_email or options.site_email or script.vat_number or options.vat_number or script.schema_sameas or schema_description or schema_areas_served %},{% endif %}{% endif %}
+
+        {% if script.schema_opening_24_hrs %}
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
+            }{% if script.schema_email or options.site_email or script.vat_number or options.vat_number or script.schema_sameas or script.schema_description or script.schema_areas_served %},{% endif %}
+        {% else %}
+            {% if script.schema_opening_hours %}
+                "openingHoursSpecification": [
+                    {% for item in script.schema_opening_hours %}
+                        {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": [
+                            {% for day in item.days %}
+                                "{{day}}"{{ loop.last == false ? ',' }}
+                            {% endfor %}
+                            ],
+                            "opens": "{{ item.opening_time }}",
+                            "closes": "{{ item.closing_time }}"
+                        }{{ loop.last == false ? ',' }}
+                    {% endfor %}
+                ]{% if script.schema_email or options.site_email or script.vat_number or options.vat_number or script.schema_sameas or script.schema_description or script.schema_areas_served %},{% endif %}
+            {% endif %}
+        {% endif %}
+        
+        {% if script.schema_email or options.site_email %}"email" : "{{ script.schema_email ? script.schema_email : options.site_email  }}"{% if script.vat_number or options.vat_number or script.schema_sameas or script.schema_description or script.schema_areas_served %},{% endif %}{% endif %}
+        
+        {% if script.vat_number or options.vat_number or options.vat_number %}"vatID" : "{{ script.vat_number ? script.vat_number : options.vat_number }}"{% if script.schema_sameas or script.schema_description or script.schema_areas_served %},{% endif %}{% endif %}
+        
+        {% if script.schema_sameas %}
+        "sameAs" :
+        [
+            {% for item in script.schema_sameas %}
+                "{{ item.sameas }}"{{ loop.last == false ? ',' }}
+            {% endfor %}
+        ]{% if script.schema_description or script.schema_areas_served %},{% endif %}
+        {% endif %}
+        
+        {% if script.schema_description %}"description" : "{{ script.schema_description }}"{% if script.schema_areas_served %},{% endif %}{% endif %}
+        
+        {% if script.schema_areas_served %}
+        "areaServed":
+        [
+            {% for item in script.schema_areas_served %}
+                {
+                    {% if item.type %}"@type": "{{ item.type }}"{{item.name ? ','}}{% endif %}
+                    {% if item.name %}"name": "{{ item.name }}"{{item.id ? ','}}{% endif %}
+                    {% if item.id %}"@id": "{{ item.id }}"{% endif %}
+                }{{ loop.last == false ? ',' }}
+            {% endfor %}
+        ]
+        {% endif %}
+    }
+    </script>
+{% endfor %}

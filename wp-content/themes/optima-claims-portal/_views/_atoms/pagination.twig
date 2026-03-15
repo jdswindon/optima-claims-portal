@@ -1,0 +1,17 @@
+{% if posts.pagination.pages %}
+    <div class="tool-pagination ~mt-8/12 w-full flex flex-wrap justify-between items-center">
+        <a href="{{posts.pagination.prev.link}}#posts" class="btn py-2 disabled cursor-pointer {{ posts.pagination.prev ? '' : 'opacity-0 pointer-events-none'}}">{{ icon('angle-left', 'sm:mr-2') }} Prev</a>
+        <ul class="pages flex flex-wrap justify-center">
+            {% for page in posts.pagination.pages %}
+                <li class="mx-1">
+                    {% if page.link %}
+                        <a href="{{page.link}}#posts" class="font-bold text-sm {{page.class}} cursor-pointer hover:text-secondary" aria-label="Page {{page.title}}">{{page.title}}</a>
+                    {% else %}
+                        <span class="font-bold text-sm {{page.class}} text-secondary">{{page.title}}</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{{posts.pagination.next.link}}#posts" class="btn py-2 cursor-pointer {{ posts.pagination.next ? '' : 'opacity-0 pointer-events-none'}}">Next {{ icon('angle-right', 'sm:ml-2') }}</a>
+    </div>
+{% endif %}

@@ -1,0 +1,13 @@
+{% if options.logos %}
+
+	<div class="flex flex-wrap justify-center gap-2 p-8 lg:justify-around {{ containerClasses }}">
+
+		{% for logo in options.logos %}
+
+			<img class="self-center h-auto lazyload max-h-16 {{ imgClasses }}" data-src="{{ logo.url|letterbox('400', '200', '#ccc')|towebp }}" alt="{{ logo.name }} Logo"/>
+
+		{% endfor %}
+
+	</div>
+
+{% endif %}

@@ -1,0 +1,17 @@
+<a href="{{ link }}" class="btn btn-{{ colour }} {{ classes }}" {{ attributes }} {{ target ? 'target="' ~ target ~ '"' }} aria-label="{{ text }}" {% if tracking %}onClick="{{ tracking }}"{% endif %}>
+    {% if icon and iconPosition == 'left' %}{{ icon(icon) }}{% endif %}
+    <span class="{{ textClass }}">{{ text }}</span>
+    {% if icon and iconPosition != 'left' %}{{ icon(icon) }}{% endif %}
+</a>
+
+{# Usage #}
+
+{# {% include "_atoms/button.twig" with {
+    link: '/contact-us/',
+    text: 'Contact Us',
+    colour: 'primary',
+    classes: 'mr-2',
+    icon: 'angle-right',
+    iconPosition: 'right',
+    tracking: 'onClick=""'
+} %} #}

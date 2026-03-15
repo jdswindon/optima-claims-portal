@@ -1,0 +1,35 @@
+<ul class="{{ ulClasses }}">
+
+	{% if options.social_facebook %}
+		<li class="{{ liClasses }}"><a rel="noopener noreferrer" aria-label="Facebook" target="_blank" class="{{ linkClasses }}" href="{{ facebook }}">{{function ('icon', 'facebook')}}</a></li>
+	{% endif %}
+
+	{% if options.social_instagram %}
+		<li class="{{ liClasses }}"><a rel="noopener noreferrer" aria-label="Instagram" target="_blank" class="{{ linkClasses }}" href="{{ instagram }}">{{function ('icon', 'instagram')}}</a></li>
+	{% endif %}
+
+	{% if options.social_youtube %}
+		<li class="{{ liClasses }}"><a rel="noopener noreferrer" aria-label="YouTube" target="_blank" class="{{ linkClasses }}" href="{{ youtube }}">{{function ('icon', 'youtube')}}</a></li>
+	{% endif %}
+
+	{% if options.social_linkedin %}
+		<li class="{{ liClasses }}"><a rel="noopener noreferrer" aria-label="LinkedIn" target="_blank" class="{{ linkClasses }}" href="{{ linkedin }}"> {{function ('icon', 'linkedin')}}</a></li>
+	{% endif %}
+
+	{% if options.social_twitter %}
+		<li class="{{ liClasses }}"><a rel="noopener noreferrer" aria-label="Twitter" target="_blank" class="{{ linkClasses }}" href="{{ twitter }}">{{function ('icon', 'x-twitter')}}</a></li>
+	{% endif %}
+
+	{% if options.social_pinterest %}
+		<li class="{{ liClasses }}"><a rel="noopener noreferrer" aria-label="Pinterest" target="_blank" class="{{ linkClasses }}" href="{{ pinterest }}">{{function ('icon', 'pinterest')}}</a></li>
+	{% endif %}
+
+	{% if options.social_google %}
+		<li class="{{ liClasses }}"><a rel="noopener noreferrer" aria-label="Google Plus" target="_blank" class="{{ linkClasses }}" href="{{ google }}">{{function ('icon', 'google-plus')}}</a></li>
+	{% endif %}
+
+	{% if options.social_google_business_profile %}
+		<li class="{{ liClasses }}"><a rel="noopener noreferrer" aria-label="Google Business Profile" target="_blank" class="{{ linkClasses }}" href="{{ google_business_profile }}">{{function ('icon', 'google')}}</a></li>
+	{% endif %}
+	
+</ul>

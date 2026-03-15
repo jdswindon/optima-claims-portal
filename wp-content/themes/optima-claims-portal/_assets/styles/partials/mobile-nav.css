@@ -1,0 +1,93 @@
+/* ---------------------------------------------------
+Mobile Nav
+--------------------------------------------------- */
+
+/* Colours */
+$mobNavBg: theme("colors.primary.DEFAULT");
+
+$linkText: theme("colors.white");
+$linkBg: transparent;
+$linkBorder: theme("colors.primary.dark");
+
+$linkTextActive: theme("colors.white");
+$linkBgActive: theme("colors.secondary.DEFAULT");
+
+$linkTextOn: theme("colors.white");
+$linkBgOn: theme("colors.primary.dark");
+
+$dropdownArrowBg: theme("colors.primary.dark");
+
+$menuTabActive: theme("colors.secondary.dark");
+
+body .mob-nav {
+
+  background-color: $mobNavBg;
+
+  &--active {
+    @apply transform translate-x-0;
+    box-shadow: -10px 0 30px rgba(#000, 0.2);
+  }
+
+  a {
+    background-color: $linkBg;
+    color: $linkText;
+    border-bottom: 1px solid $linkBorder;
+
+    &:hover,
+    &:focus {
+      color: $linkTextOn;
+      background-color: $linkBgOn;
+    }
+  }
+
+  /* Current page states */
+  .current-menu-item > a,
+  .current-menu-parent > a,
+  .current-menu-ancestor > a {
+    color: $linkTextOn;
+    background-color: $linkBgOn;
+
+    .sub-arrow {
+      color: $linkTextOn;
+    }
+  }
+
+  .sub-arrow {
+    color: $linkText;
+    background-color: $dropdownArrowBg;
+    border-left: 1px solid $linkBorder;
+
+    &:focus,
+    &:hover {
+      background-color: $linkBgActive;
+    }
+  }
+
+  /* active class is applied to parent link when submenu is activated */
+  a.active {
+    background-color: $linkBgActive;
+    color: $linkTextActive;
+
+    .sub-arrow {
+      color: $linkTextActive;
+      border-color: $linkBorder;
+      background-color: $linkBgActive;
+
+      svg {
+        @apply rotate-180;
+      }
+    }
+  }
+
+  /* START REMOVE - If using mobile-nav-1.twig */
+  .menu-tab.active {
+    @apply flex flex-col;
+  }
+
+  .menu-tab-btn.active {
+    background-color: $menuTabActive;
+    border-color: $menuTabActive;
+  }
+  /* END REMOVE - If using mobile-nav-1.twig */
+
+}

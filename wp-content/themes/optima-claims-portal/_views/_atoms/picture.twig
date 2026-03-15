@@ -1,0 +1,198 @@
+
+{#  Custom picture, useful for any image. See bottom of this file for a full example. #}
+
+<picture class="w-full {{ pictureClasses }}">
+
+  {% for breakpoint, options in breakpoints %}
+    
+    <source
+      type="image/webp"
+      srcset="{{
+        lazyload != false ? '' :
+        source|
+        resize(
+          options.w|default(1000),
+          options.h|default(null),
+          options.crop|default('center')
+          )|
+        towebp
+      }}"
+      data-srcset="{{
+        source|
+        resize(
+          options.w|default(1000),
+          options.h|default(null),
+          options.crop|default('center')
+          )|
+        towebp
+      }}"
+      media="(min-width: {{breakpoint}})"
+    >
+    
+    <source
+      type="image/jpeg"
+      srcset="{{
+        lazyload != false ? '' :
+        source|
+        resize(
+          options.w|default(1000),
+          options.h|default(null),
+          options.crop|default('center')
+          )|
+        tojpg
+      }}"
+      data-srcset="{{
+        source|
+        resize(
+          options.w|default(1000),
+          options.h|default(null),
+          options.crop|default('center')
+          )|
+        tojpg
+      }}"
+      media="(min-width: {{breakpoint}})"
+    >
+
+  {% endfor %}
+	
+    <source
+      type="image/webp"
+      srcset="{{
+        lazyload != false ? '' :
+        source|
+        resize(
+          img.w|default(640),
+          img.h|default(null),
+          img.crop|default('center')
+          )|
+        towebp
+      }}"
+      data-srcset="{{
+        source|
+        resize(
+          img.w|default(640),
+          img.h|default(null),
+          img.crop|default('center')
+          )|
+        towebp
+      }}"
+    >
+    
+    <source
+      type="image/jpeg"
+      srcset="{{
+        lazyload != false ? '' :
+        source|
+        resize(
+          img.w|default(640),
+          img.h|default(null),
+          img.crop|default('center')
+        )|
+        tojpg
+      }}"
+      data-srcset="{{
+        source|
+        resize(
+          img.w|default(640),
+          img.h|default(null),
+          img.crop|default('center')
+        )|
+        tojpg
+      }}"
+    >
+
+  <img
+    src="{{
+      lazyload != false ? '' :
+        source|
+        tojpg|
+        resize(
+          img.w|default(640),
+          img.h|default(null),
+          img.crop|default('center')
+        )
+    }}"
+    data-src="{{
+      source|
+      tojpg|
+      resize(
+        img.w|default(640),
+        img.h|default(null),
+        img.crop|default('center')
+      )
+    }}"
+    alt="{{ img.alt|default(post_title) }}"
+    class="{{ img.classes }}"
+    width="{{ img.w|default(640) }}"
+    height="{{ img.h|default(0) }}"
+    fetchpriority="{{ img.fetchpriority|default('auto') }}"
+  >
+</picture>
+
+{# 
+
+--- Usage (for a lazyloaded image)
+
+{% include "_atoms/picture.twig" with {
+  source: post.thumbnail.src,
+  lazyload: true,
+  breakpoints: {
+    "768px" : {
+      w: 1024,
+      h: 500,
+      crop: 'center'
+    },
+    "640px" : {
+      w: 768,
+      h: 400,
+      crop: 'center'
+    },
+    "1px" : {
+      w: 640,
+      h: 640,
+      crop: 'center'
+    },
+  },
+  img: {
+    classes: 'lazyload',
+    w: 640,
+    h: 640,
+    crop: 'center',
+    fetchpriority: 'high', -- Optional only use for images above the fold
+  }
+}
+%}
+
+--- Usage (for a non-lazyloaded image)
+
+{% include "_atoms/picture.twig" with {
+  source: post.thumbnail.src,
+  lazyload: false,
+  breakpoints: {
+    "768px" : {
+      w: 1024,
+      h: 500,
+      crop: 'center'
+    },
+    "640px" : {
+      w: 768,
+      h: 400,
+      crop: 'center'
+    },
+    "1px" : {
+      w: 640,
+      h: 640,
+      crop: 'center'
+    },
+  },
+  img: {
+    classes: '',
+    w: 640,
+    h: 640,
+    crop: 'center',
+    fetchpriority: 'high', -- Optional only use for images above the fold
+  }
+}
+%}
+
+#}

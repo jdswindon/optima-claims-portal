@@ -1,0 +1,42 @@
+{% extends '_layout/base.twig' %}
+
+{% block content %}
+
+	<div class="grid grid-cols-1">
+
+		{{post.content}}
+
+		{# Next and prev post pagination #}
+		{% if (prev_post and prev_post.id != post.id and prev_post.id != next_post.id and prev_post.post_type == 'post') or (next_post and next_post.id != post.id and next_post.post_type == 'post') %}
+			<section id="pagination" class="">
+				<div class="container">
+					<div class="flex flex-wrap justify-between">
+						{% if prev_post and prev_post.id != post.id and prev_post.id != next_post.id and prev_post.post_type == 'post' %}
+							{% include "_atoms/button.twig" with {
+								link: prev_post.link,
+								text: 'Previous post',
+								colour: 'primary',
+								classes: 'mr-4',
+								icon: 'angle-left',
+								iconPosition: 'left'
+							} %}
+						{% endif %}
+						{% if next_post and next_post.id != post.id and next_post.post_type == 'post' %}
+							{% include "_atoms/button.twig" with {
+								link: next_post.link,
+								text: 'Next post',
+								colour: 'primary',
+								classes: 'ml-auto',
+								icon: 'angle-right',
+								iconPosition: 'right'
+							} %}
+						{% endif %}
+					</div>
+				</div>
+			</section>
+		{% endif %}
+
+	</div>
+
+
+{% endblock %}
