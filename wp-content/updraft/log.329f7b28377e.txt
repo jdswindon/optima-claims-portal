@@ -1,0 +1,248 @@
+0000.001 (0) Opened log file at time: Sun, 15 Mar 2026 16:26:15 +0000 on http://optima-claims-portal.test
+0000.008 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.26.2 WP: 6.9.4 PHP: 8.3.30 (apache2handler, Windows NT LAPTOP-CNF2F6KG 10.0 build 26200 (Windows 11) AMD64) MySQL: 8.4.3 (max packet size=536870912) WPLANG: en_GB Server: Apache/2.4.66 (Win64) OpenSSL/3.0.18 PHP/8.3.30 safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 6M | 8M) multisite: N openssl: OpenSSL 3.0.18 30 Sep 2025 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.012 (0) Free space on disk containing Updraft's temporary directory: 867537.5 MB
+0000.020 (0) Tasks: Backup files: 0 (schedule: manual) Backup DB: 1 (schedule: manual)
+0000.027 (0) Semaphore (d, adtrakwp_options) being initialised
+0000.035 (0) Requesting semaphore lock (d) (apparently not via scheduler)
+0000.045 (0) Set semaphore last lock (d) time to 2026-03-15 16:26:15
+0000.049 (0) Semaphore lock (d) complete
+0000.062 (0) Backup run: resumption=0, nonce=329f7b28377e, file_nonce=329f7b28377e begun at=1773591975 (0s ago), job type=backup
+0000.068 (0) Scheduling a resumption (1) after 300 seconds (1773592275) in case this run gets aborted
+0000.105 (0) This backup run is not intended for files - skipping
+0000.107 (0) Beginning creation of database dump (WordPress DB)
+0000.110 (0) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+0000.135 (0) Table adtrakwp_options: Total expected rows (via COUNT): 266
+0000.137 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.207 (0) Table adtrakwp_options: Rows added in this batch (next record: 306): 262 (uncompressed bytes in this segment=1431257) in 0.08 seconds
+0000.223 (0) Table adtrakwp_options: finishing file(s) (2, 268.1 KB)
+0000.234 (0) Table adtrakwp_users: Total expected rows (via COUNT): 1
+0000.237 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.243 (0) Table adtrakwp_users: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1506) in 0.01 seconds
+0000.254 (0) Table adtrakwp_users: finishing file(s) (2, 0.6 KB)
+0000.267 (0) Table adtrakwp_usermeta: Total expected rows (via COUNT): 19
+0000.270 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.273 (0) Table adtrakwp_usermeta: Rows added in this batch (next record: 19): 19 (uncompressed bytes in this segment=1985) in 0.01 seconds
+0000.285 (0) Table adtrakwp_usermeta: finishing file(s) (2, 1.1 KB)
+0000.296 (0) Table adtrakwp_commentmeta: Total expected rows (via COUNT): 0
+0000.302 (0) Table adtrakwp_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=713) in 0.01 seconds
+0000.314 (0) Table adtrakwp_commentmeta: finishing file(s) (2, 0.4 KB)
+0000.323 (0) Table adtrakwp_comments: Total expected rows (via COUNT): 0
+0000.327 (0) Table adtrakwp_comments: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1738) in 0.01 seconds
+0000.336 (0) Table adtrakwp_comments: finishing file(s) (2, 0.5 KB)
+0000.344 (0) Table adtrakwp_links: Total expected rows (via COUNT): 0
+0000.346 (0) Table adtrakwp_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1334) in 0.00 seconds
+0000.353 (0) Table adtrakwp_links: finishing file(s) (2, 0.5 KB)
+0000.360 (0) Table adtrakwp_postmeta: Total expected rows (via COUNT): 1
+0000.361 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.363 (0) Table adtrakwp_postmeta: Rows added in this batch (next record: 13): 1 (uncompressed bytes in this segment=783) in 0.01 seconds
+0000.369 (0) Table adtrakwp_postmeta: finishing file(s) (2, 0.4 KB)
+0000.375 (0) Table adtrakwp_posts: Total expected rows (via COUNT): 3
+0000.376 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.377 (0) Table adtrakwp_posts: Rows added in this batch (next record: 9): 3 (uncompressed bytes in this segment=2963) in 0.01 seconds
+0000.383 (0) Table adtrakwp_posts: finishing file(s) (2, 0.8 KB)
+0000.386 (0) Table adtrakwp_term_relationships: Total expected rows (approximate): 0
+0000.389 (0) Table adtrakwp_term_relationships: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=671) in 0.00 seconds
+0000.395 (0) Table adtrakwp_term_relationships: finishing file(s) (2, 0.3 KB)
+0000.400 (0) Table adtrakwp_term_taxonomy: Total expected rows (via COUNT): 1
+0000.401 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.402 (0) Table adtrakwp_term_taxonomy: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=952) in 0.00 seconds
+0000.408 (0) Table adtrakwp_term_taxonomy: finishing file(s) (2, 0.4 KB)
+0000.416 (0) Table adtrakwp_termmeta: Total expected rows (via COUNT): 0
+0000.420 (0) Table adtrakwp_termmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=686) in 0.01 seconds
+0000.428 (0) Table adtrakwp_termmeta: finishing file(s) (2, 0.4 KB)
+0000.433 (0) Table adtrakwp_terms: Total expected rows (via COUNT): 1
+0000.434 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.436 (0) Table adtrakwp_terms: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=770) in 0.00 seconds
+0000.442 (0) Table adtrakwp_terms: finishing file(s) (2, 0.4 KB)
+0000.446 (0) Table adtrakwp_hf_submissions: Total expected rows (via COUNT): 0
+0000.449 (0) Table adtrakwp_hf_submissions: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=798) in 0.00 seconds
+0000.455 (0) Table adtrakwp_hf_submissions: finishing file(s) (2, 0.4 KB)
+0000.463 (0) Table adtrakwp_post_smtp_logmeta: Total expected rows (via COUNT): 0
+0000.465 (0) Table adtrakwp_post_smtp_logmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=617) in 0.01 seconds
+0000.474 (0) Table adtrakwp_post_smtp_logmeta: finishing file(s) (2, 0.3 KB)
+0000.481 (0) Table adtrakwp_post_smtp_logs: Total expected rows (via COUNT): 0
+0000.484 (0) Table adtrakwp_post_smtp_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1248) in 0.01 seconds
+0000.491 (0) Table adtrakwp_post_smtp_logs: finishing file(s) (2, 0.4 KB)
+0000.496 (0) Table adtrakwp_wfauditevents: Total expected rows (via COUNT): 0
+0000.498 (0) Table adtrakwp_wfauditevents: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=736) in 0.00 seconds
+0000.505 (0) Table adtrakwp_wfauditevents: finishing file(s) (2, 0.4 KB)
+0000.511 (0) Table adtrakwp_wfblockediplog: Total expected rows (approximate): 0
+0000.513 (0) Table adtrakwp_wfblockediplog: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=660) in 0.00 seconds
+0000.520 (0) Table adtrakwp_wfblockediplog: finishing file(s) (2, 0.4 KB)
+0000.524 (0) Table adtrakwp_wfblocks7: Total expected rows (via COUNT): 0
+0000.526 (0) Table adtrakwp_wfblocks7: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=826) in 0.00 seconds
+0000.535 (0) Table adtrakwp_wfblocks7: finishing file(s) (2, 0.4 KB)
+0000.541 (0) Table adtrakwp_wfconfig: Total expected rows (approximate): 229
+0000.543 (0) Table adtrakwp_wfconfig: Rows added in this batch (next record: 1000): 231 (uncompressed bytes in this segment=13751) in 0.00 seconds
+0000.550 (0) Table adtrakwp_wfconfig: finishing file(s) (2, 3.7 KB)
+0000.556 (0) Table adtrakwp_wfcrawlers: Total expected rows (approximate): 0
+0000.557 (0) Table adtrakwp_wfcrawlers: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=587) in 0.00 seconds
+0000.565 (0) Table adtrakwp_wfcrawlers: finishing file(s) (2, 0.3 KB)
+0000.572 (0) Table adtrakwp_wffilechanges: Total expected rows (approximate): 0
+0000.573 (0) Table adtrakwp_wffilechanges: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=491) in 0.00 seconds
+0000.579 (0) Table adtrakwp_wffilechanges: finishing file(s) (2, 0.3 KB)
+0000.584 (0) Table adtrakwp_wffilemods: Total expected rows (approximate): 0
+0000.586 (0) Table adtrakwp_wffilemods: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=894) in 0.00 seconds
+0000.593 (0) Table adtrakwp_wffilemods: finishing file(s) (2, 0.4 KB)
+0000.598 (0) Table adtrakwp_wfhits: Total expected rows (via COUNT): 0
+0000.599 (0) Table adtrakwp_wfhits: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=919) in 0.00 seconds
+0000.605 (0) Table adtrakwp_wfhits: finishing file(s) (2, 0.5 KB)
+0000.611 (0) Table adtrakwp_wfhoover: Total expected rows (via COUNT): 0
+0000.613 (0) Table adtrakwp_wfhoover: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=511) in 0.00 seconds
+0000.618 (0) Table adtrakwp_wfhoover: finishing file(s) (2, 0.3 KB)
+0000.623 (0) Table adtrakwp_wfissues: Total expected rows (via COUNT): 0
+0000.624 (0) Table adtrakwp_wfissues: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=828) in 0.00 seconds
+0000.629 (0) Table adtrakwp_wfissues: finishing file(s) (2, 0.4 KB)
+0000.634 (0) Table adtrakwp_wfknownfilelist: Total expected rows (via COUNT): 0
+0000.635 (0) Table adtrakwp_wfknownfilelist: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=500) in 0.00 seconds
+0000.640 (0) Table adtrakwp_wfknownfilelist: finishing file(s) (2, 0.3 KB)
+0000.644 (0) Table adtrakwp_wflivetraffichuman: Total expected rows (approximate): 0
+0000.645 (0) Table adtrakwp_wflivetraffichuman: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=683) in 0.00 seconds
+0000.651 (0) Table adtrakwp_wflivetraffichuman: finishing file(s) (2, 0.3 KB)
+0000.656 (0) Table adtrakwp_wflocs: Total expected rows (approximate): 0
+0000.657 (0) Table adtrakwp_wflocs: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=714) in 0.00 seconds
+0000.662 (0) Table adtrakwp_wflocs: finishing file(s) (2, 0.4 KB)
+0000.666 (0) Table adtrakwp_wflogins: Total expected rows (via COUNT): 0
+0000.667 (0) Table adtrakwp_wflogins: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=705) in 0.00 seconds
+0000.672 (0) Table adtrakwp_wflogins: finishing file(s) (2, 0.4 KB)
+0000.676 (0) Table adtrakwp_wfls_2fa_secrets: Total expected rows (via COUNT): 0
+0000.677 (0) Table adtrakwp_wfls_2fa_secrets: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=704) in 0.00 seconds
+0000.682 (0) Table adtrakwp_wfls_2fa_secrets: finishing file(s) (2, 0.4 KB)
+0000.686 (0) Table adtrakwp_wfls_role_counts: Total expected rows (approximate): 0
+0000.687 (0) Table adtrakwp_wfls_role_counts: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=610) in 0.00 seconds
+0000.692 (0) Table adtrakwp_wfls_role_counts: finishing file(s) (2, 0.4 KB)
+0000.695 (0) Table adtrakwp_wfls_settings: Total expected rows (approximate): 30
+0000.697 (0) Table adtrakwp_wfls_settings: Rows added in this batch (next record: 1000): 27 (uncompressed bytes in this segment=1972) in 0.00 seconds
+0000.702 (0) Table adtrakwp_wfls_settings: finishing file(s) (2, 0.9 KB)
+0000.706 (0) Table adtrakwp_wfnotifications: Total expected rows (approximate): 0
+0000.707 (0) Table adtrakwp_wfnotifications: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=644) in 0.00 seconds
+0000.712 (0) Table adtrakwp_wfnotifications: finishing file(s) (2, 0.4 KB)
+0000.717 (0) Table adtrakwp_wfpendingissues: Total expected rows (via COUNT): 0
+0000.719 (0) Table adtrakwp_wfpendingissues: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=870) in 0.00 seconds
+0000.724 (0) Table adtrakwp_wfpendingissues: finishing file(s) (2, 0.4 KB)
+0000.728 (0) Table adtrakwp_wfreversecache: Total expected rows (approximate): 0
+0000.729 (0) Table adtrakwp_wfreversecache: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=532) in 0.00 seconds
+0000.734 (0) Table adtrakwp_wfreversecache: finishing file(s) (2, 0.3 KB)
+0000.738 (0) Table adtrakwp_wfsecurityevents: Total expected rows (via COUNT): 0
+0000.739 (0) Table adtrakwp_wfsecurityevents: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=713) in 0.00 seconds
+0000.744 (0) Table adtrakwp_wfsecurityevents: finishing file(s) (2, 0.4 KB)
+0000.749 (0) Table adtrakwp_wfsnipcache: Total expected rows (via COUNT): 0
+0000.750 (0) Table adtrakwp_wfsnipcache: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=728) in 0.00 seconds
+0000.755 (0) Table adtrakwp_wfsnipcache: finishing file(s) (2, 0.4 KB)
+0000.759 (0) Table adtrakwp_wfstatus: Total expected rows (via COUNT): 0
+0000.763 (0) Table adtrakwp_wfstatus: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=584) in 0.00 seconds
+0000.768 (0) Table adtrakwp_wfstatus: finishing file(s) (2, 0.4 KB)
+0000.775 (0) Table adtrakwp_wftrafficrates: Total expected rows (approximate): 0
+0000.777 (0) Table adtrakwp_wftrafficrates: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=597) in 0.00 seconds
+0000.782 (0) Table adtrakwp_wftrafficrates: finishing file(s) (2, 0.3 KB)
+0000.786 (0) Table adtrakwp_wfwaffailures: Total expected rows (via COUNT): 0
+0000.787 (0) Table adtrakwp_wfwaffailures: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=558) in 0.00 seconds
+0000.793 (0) Table adtrakwp_wfwaffailures: finishing file(s) (2, 0.3 KB)
+0000.794 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_options.table.tmpr307.gz (1/40/fopen): adding to final database dump
+0000.799 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_options.table.gz (2/40/fopen): adding to final database dump
+0000.801 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_users.table.tmpr2.gz (3/40/fopen): adding to final database dump
+0000.802 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_users.table.gz (4/40/fopen): adding to final database dump
+0000.803 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_usermeta.table.tmpr20.gz (5/40/fopen): adding to final database dump
+0000.803 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_usermeta.table.gz (6/40/fopen): adding to final database dump
+0000.804 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_commentmeta.table.tmpr0.gz (7/40/fopen): adding to final database dump
+0000.805 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_commentmeta.table.gz (8/40/fopen): adding to final database dump
+0000.806 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_comments.table.tmpr0.gz (9/40/fopen): adding to final database dump
+0000.807 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_comments.table.gz (10/40/fopen): adding to final database dump
+0000.808 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_links.table.tmpr0.gz (11/40/fopen): adding to final database dump
+0000.808 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_links.table.gz (12/40/fopen): adding to final database dump
+0000.809 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_postmeta.table.tmpr14.gz (13/40/fopen): adding to final database dump
+0000.810 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_postmeta.table.gz (14/40/fopen): adding to final database dump
+0000.811 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_posts.table.tmpr10.gz (15/40/fopen): adding to final database dump
+0000.812 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_posts.table.gz (16/40/fopen): adding to final database dump
+0000.812 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_term_relationships.table.tmpr1.gz (17/40/fopen): adding to final database dump
+0000.813 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_term_relationships.table.gz (18/40/fopen): adding to final database dump
+0000.814 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_term_taxonomy.table.tmpr2.gz (19/40/fopen): adding to final database dump
+0000.815 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_term_taxonomy.table.gz (20/40/fopen): adding to final database dump
+0000.815 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_termmeta.table.tmpr0.gz (21/40/fopen): adding to final database dump
+0000.816 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_termmeta.table.gz (22/40/fopen): adding to final database dump
+0000.817 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_terms.table.tmpr2.gz (23/40/fopen): adding to final database dump
+0000.818 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_terms.table.gz (24/40/fopen): adding to final database dump
+0000.818 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_hf_submissions.table.tmpr0.gz (25/40/fopen): adding to final database dump
+0000.819 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_hf_submissions.table.gz (26/40/fopen): adding to final database dump
+0000.820 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_post_smtp_logmeta.table.tmpr0.gz (27/40/fopen): adding to final database dump
+0000.821 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_post_smtp_logmeta.table.gz (28/40/fopen): adding to final database dump
+0000.822 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_post_smtp_logs.table.tmpr0.gz (29/40/fopen): adding to final database dump
+0000.823 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_post_smtp_logs.table.gz (30/40/fopen): adding to final database dump
+0000.823 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfauditevents.table.tmpr0.gz (31/40/fopen): adding to final database dump
+0000.824 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfauditevents.table.gz (32/40/fopen): adding to final database dump
+0000.825 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfblockediplog.table.tmpr1.gz (33/40/fopen): adding to final database dump
+0000.826 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfblockediplog.table.gz (34/40/fopen): adding to final database dump
+0000.826 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfblocks7.table.tmpr0.gz (35/40/fopen): adding to final database dump
+0000.827 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfblocks7.table.gz (36/40/fopen): adding to final database dump
+0000.828 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfconfig.table.tmpr1001.gz (37/40/fopen): adding to final database dump
+0000.829 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfconfig.table.gz (38/40/fopen): adding to final database dump
+0000.830 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfcrawlers.table.tmpr1.gz (39/40/fopen): adding to final database dump
+0000.830 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfcrawlers.table.gz (40/40/fopen): adding to final database dump
+0000.831 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wffilechanges.table.tmpr1.gz (41/40/fopen): adding to final database dump
+0000.832 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wffilechanges.table.gz (42/40/fopen): adding to final database dump
+0000.833 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wffilemods.table.tmpr1.gz (43/40/fopen): adding to final database dump
+0000.834 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wffilemods.table.gz (44/40/fopen): adding to final database dump
+0000.834 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfhits.table.tmpr0.gz (45/40/fopen): adding to final database dump
+0000.835 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfhits.table.gz (46/40/fopen): adding to final database dump
+0000.836 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfhoover.table.tmpr0.gz (47/40/fopen): adding to final database dump
+0000.837 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfhoover.table.gz (48/40/fopen): adding to final database dump
+0000.838 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfissues.table.tmpr0.gz (49/40/fopen): adding to final database dump
+0000.839 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfissues.table.gz (50/40/fopen): adding to final database dump
+0000.839 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfknownfilelist.table.tmpr0.gz (51/40/fopen): adding to final database dump
+0000.840 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfknownfilelist.table.gz (52/40/fopen): adding to final database dump
+0000.841 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wflivetraffichuman.table.tmpr1.gz (53/40/fopen): adding to final database dump
+0000.842 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wflivetraffichuman.table.gz (54/40/fopen): adding to final database dump
+0000.842 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wflocs.table.tmpr1.gz (55/40/fopen): adding to final database dump
+0000.843 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wflocs.table.gz (56/40/fopen): adding to final database dump
+0000.844 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wflogins.table.tmpr0.gz (57/40/fopen): adding to final database dump
+0000.845 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wflogins.table.gz (58/40/fopen): adding to final database dump
+0000.845 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfls_2fa_secrets.table.tmpr0.gz (59/40/fopen): adding to final database dump
+0000.846 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfls_2fa_secrets.table.gz (60/40/fopen): adding to final database dump
+0000.847 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfls_role_counts.table.tmpr1.gz (61/40/fopen): adding to final database dump
+0000.848 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfls_role_counts.table.gz (62/40/fopen): adding to final database dump
+0000.848 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfls_settings.table.tmpr1001.gz (63/40/fopen): adding to final database dump
+0000.849 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfls_settings.table.gz (64/40/fopen): adding to final database dump
+0000.850 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfnotifications.table.tmpr1.gz (65/40/fopen): adding to final database dump
+0000.851 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfnotifications.table.gz (66/40/fopen): adding to final database dump
+0000.852 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfpendingissues.table.tmpr0.gz (67/40/fopen): adding to final database dump
+0000.852 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfpendingissues.table.gz (68/40/fopen): adding to final database dump
+0000.853 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfreversecache.table.tmpr1.gz (69/40/fopen): adding to final database dump
+0000.854 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfreversecache.table.gz (70/40/fopen): adding to final database dump
+0000.855 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfsecurityevents.table.tmpr0.gz (71/40/fopen): adding to final database dump
+0000.855 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfsecurityevents.table.gz (72/40/fopen): adding to final database dump
+0000.856 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfsnipcache.table.tmpr0.gz (73/40/fopen): adding to final database dump
+0000.857 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfsnipcache.table.gz (74/40/fopen): adding to final database dump
+0000.858 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfstatus.table.tmpr0.gz (75/40/fopen): adding to final database dump
+0000.858 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfstatus.table.gz (76/40/fopen): adding to final database dump
+0000.859 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wftrafficrates.table.tmpr1.gz (77/40/fopen): adding to final database dump
+0000.860 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wftrafficrates.table.gz (78/40/fopen): adding to final database dump
+0000.861 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfwaffailures.table.tmpr0.gz (79/40/fopen): adding to final database dump
+0000.861 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db-table-adtrakwp_wfwaffailures.table.gz (80/40/fopen): adding to final database dump
+0000.873 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db.gz: finished writing out complete database file (288.1 KB)
+0000.887 (0) Total database tables backed up: 40 (backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db.gz, size: 295139, sha1: 2cb47603892cdb06c6d12cb2b61d4eeb70c669b4, sha256: 01c52fb02a2067e5e1d3c02684d0537bc096d4aab6dd0114b0f5a38773768db5)
+0000.892 (0) backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db.gz: db: This file has not yet been successfully uploaded: will queue
+0000.893 (0) Saving backup history. Total backup size: 288.2 KB
+0000.894 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0000.896 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0000.898 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-10581871975d437fea0b42fdeed97ad6)
+0002.409 (0) Google Drive: creating path: /UpdraftPlus
+0004.031 (0) Google Drive: quota usage: used=4695.8 MB, total=15360 MB, available=10664.2 MB
+0004.038 (0) Google Drive: backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db.gz: Attempting to upload to Google Drive (into folder id: 1o2DCm36gVm7wF5BuDW1FUG_U5RHzW0ve)
+0006.462 (0) Googledrive chunked upload: 100 % uploaded
+0006.469 (0) Google Drive: OK: Archive backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db.gz uploaded in 2.42 seconds
+0006.472 (0) Recording as successfully uploaded: backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db.gz
+0006.479 (0) Deleting local file: backup_2026-03-15-1626_Optima_Claims_Portal_329f7b28377e-db.gz: OK
+0006.488 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0006.492 (0) Number of backup sets in history: 1; groups (db): 1
+0006.495 (0) Examining (for databases) backup set with group_id=0, nonce=329f7b28377e, datestamp=1773591975 (Mar 15 2026 16:26:15)
+0006.498 (0) This backup set is the backup set just made, so will not be deleted.
+0006.498 (0) Number of backup sets in history: 1; groups (files): 1
+0006.501 (0) Examining (for files) backup set with nonce=329f7b28377e, datestamp=1773591975 (Mar 15 2026 16:26:15)
+0006.501 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0006.504 (0) Retain: saving new backup history (sets now: 1) and finishing retain operation
+0006.514 (0) Resume backup (329f7b28377e, 0): finish run
+0006.528 (0) Decremented the semaphore (d) by 1
+0006.537 (0) Semaphore (d) unlocked
+0006.542 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0006.555 (0) No email will/can be sent - the user has not configured an email address.
+0006.560 (0) The backup succeeded and is now complete
