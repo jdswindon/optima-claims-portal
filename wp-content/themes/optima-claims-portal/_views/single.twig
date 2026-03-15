@@ -12,7 +12,7 @@
 				<div class="container">
 					<div class="flex flex-wrap justify-between">
 						{% if prev_post and prev_post.id != post.id and prev_post.id != next_post.id and prev_post.post_type == 'post' %}
-							{% include "_atoms/button.twig" with {
+							{% include "_components/button.twig" with {
 								link: prev_post.link,
 								text: 'Previous post',
 								colour: 'primary',
@@ -22,7 +22,7 @@
 							} %}
 						{% endif %}
 						{% if next_post and next_post.id != post.id and next_post.post_type == 'post' %}
-							{% include "_atoms/button.twig" with {
+							{% include "_components/button.twig" with {
 								link: next_post.link,
 								text: 'Next post',
 								colour: 'primary',

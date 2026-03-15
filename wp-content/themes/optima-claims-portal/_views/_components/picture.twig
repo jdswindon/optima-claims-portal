@@ -133,7 +133,7 @@
 
 --- Usage (for a lazyloaded image)
 
-{% include "_atoms/picture.twig" with {
+{% include "_components/picture.twig" with {
   source: post.thumbnail.src,
   lazyload: true,
   breakpoints: {
@@ -165,7 +165,7 @@
 
 --- Usage (for a non-lazyloaded image)
 
-{% include "_atoms/picture.twig" with {
+{% include "_components/picture.twig" with {
   source: post.thumbnail.src,
   lazyload: false,
   breakpoints: {
