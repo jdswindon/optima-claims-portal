@@ -1,0 +1,57 @@
+##### Edit Below This Line #####
+
+# Ignore the llms.txt file so it generates on the production server only
+llms.txt
+
+# Ignore node_modules, dist folder and composer
+wp-content/themes/optima-claims-portal/node_modules/*
+wp-content/themes/optima-claims-portal/vendor/*
+wp-content/themes/optima-claims-portal/dist/*
+
+##### DO NOT EDIT BELOW THIS LINE #####
+
+# Ignore the config
+wp-config.php
+
+# Ignore the uploads 'cause it's massive
+wp-content/uploads/*
+
+# ignore all files starting with . or ~
+.*
+~*
+# Don't ignore the gitignore or htaccess #
+!.gitignore
+!.htaccess
+!.env.ald
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
