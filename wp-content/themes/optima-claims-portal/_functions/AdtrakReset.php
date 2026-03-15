@@ -22,16 +22,6 @@ if( function_exists('acf_add_options_page') ) {
     'icon_url' 		=> 'dashicons-hammer',
     'redirect' 		=> false
 	));
-
-    acf_add_options_page(array(
-    'page_title'    => 'Marketing',
-    'menu_title'    => 'Marketing',
-    'menu_slug'     => 'marketing',
-    'position'      => 75,
-    'capability'    => 'update_core',
-    'icon_url'      => 'dashicons-randomize',
-    'redirect'      => false
-    ));
 	
 };
 
