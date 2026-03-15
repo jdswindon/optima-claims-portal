@@ -189,7 +189,7 @@ class Recaptcha {
         }
         
         // Check score
-        $min_score = apply_filters( 'hf_recaptcha_min_score', 0.5 );
+        $min_score = apply_filters( 'hf_recaptcha_min_score', 0.5, $form );
         
         if ( isset( $verification_result['score'] ) && $verification_result['score'] < $min_score ) {
             $this->log_debug( sprintf( 'reCAPTCHA score %.2f below minimum %.2f', $verification_result['score'], $min_score ), $form );
