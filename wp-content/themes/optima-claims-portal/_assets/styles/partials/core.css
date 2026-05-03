@@ -4,7 +4,10 @@ Core
 
 body,
 html {
-  min-height: 101%;
+  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
   scroll-behavior: smooth;
 }
 

@@ -30,20 +30,18 @@
 
 	<body class="{{ body_class }}">
 
-		{% include "_layout/mobile-nav-2.twig" %}
-
 		<div class="wrapper">
 
 			{% include "_layout/mobile-fixed-bar.twig" %}
 
 			{% block header %}
-				{% include "_layout/header.twig" %}
+			  {% include "_layout/header.twig" %}
 			{% endblock %}
 
-			{% block content %}{% endblock %}
+			{% block content %}
+			{% endblock %}
 
 			{% block footer %}
-				{% include "_layout/footer.twig" %}
 			{% endblock %}
 
 		</div>

@@ -1,0 +1,146 @@
+{#
+  Title: Lookup
+  Description: Lookup
+  Category: formatting
+  Icon: cover-image
+  Keywords: Lookup
+  Mode: edit
+  SupportsAlign: center
+  SupportsMode: false
+  SupportsMultiple: false
+#}
+
+<section id="lookup" class="h-screen flex items-center justify-center">
+
+	<div class="container max-w-screen-lg mx-auto px-4">
+
+		{% if claim_upload_ready|default(false) %}
+
+			<div class="max-w-xl mx-auto p-6 md:p-8 bg-white border border-gray-200 rounded-lg shadow-sm">
+				<h2 class="text-xl font-bold text-gray-900 mb-2">{{ function('__', 'Upload images', 'adtrak') }}</h2>
+				<p class="text-gray-600 text-sm mb-6">{{ function('__', 'Your claim was found. Add each photo and a short description. Use "Add another image" for more than one file.', 'adtrak') }}</p>
+
+				{% if upload_error_message %}
+					<div class="mb-4 p-3 rounded-md bg-red-50 text-red-800 text-sm border border-red-100" role="alert">
+						{{ upload_error_message }}
+					</div>
+				{% endif %}
+
+				{% if upload_success_message %}
+					<div class="mb-4 p-3 rounded-md bg-green-50 text-green-900 text-sm border border-green-100" role="status">
+						{{ upload_success_message }}
+					</div>
+				{% endif %}
+
+				<form method="post" enctype="multipart/form-data" action="" class="space-y-4">
+					<input type="hidden" name="claim_session_token" value="{{ claim_session|e('html_attr') }}" />
+					<input type="hidden" name="optima_claim_upload_submit" value="1" />
+					{{ function('wp_nonce_field', 'optima_claim_upload_' ~ claim_session, 'optima_claim_upload_nonce', true, false) }}
+
+					<div id="claim-image-rows" class="space-y-6">
+						<div class="claim-image-row border border-gray-100 rounded-lg p-4 space-y-3 bg-gray-50/50">
+							<div class="flex items-start justify-between gap-3">
+								<p class="claim-image-row-heading text-sm font-semibold text-gray-800">{{ function('__', 'Image', 'adtrak') }} 1</p>
+								<button
+									type="button"
+									class="claim-image-row-remove shrink-0 text-sm font-medium text-red-700 hover:text-red-900 underline decoration-red-700/50 hover:decoration-red-900 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-red-400 rounded"
+									hidden
+								>
+									{{ function('__', 'Remove', 'adtrak') }}
+								</button>
+							</div>
+							<div>
+								<label class="block text-sm font-medium text-gray-700 mb-1" for="claim_image_files_0">{{ function('__', 'File', 'adtrak') }}</label>
+								<input
+									type="file"
+									name="claim_image_files[0]"
+									id="claim_image_files_0"
+									accept="image/jpeg,image/png,image/gif,image/webp"
+									class="block w-full text-sm text-gray-700 file:mr-3 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-medium file:bg-gray-100 file:text-gray-800 hover:file:bg-gray-200"
+								/>
+							</div>
+							<div>
+								<label class="block text-sm font-medium text-gray-700 mb-1" for="claim_image_descriptions_0">{{ function('__', 'Description', 'adtrak') }}</label>
+								<textarea
+									name="claim_image_descriptions[0]"
+									id="claim_image_descriptions_0"
+									rows="3"
+									class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+									placeholder="{{ function('__', 'Describe what this photo shows', 'adtrak')|e('html_attr') }}"
+								></textarea>
+							</div>
+						</div>
+					</div>
+
+					<p>
+						<button type="button" id="optima-add-claim-image-row" class="text-sm font-medium text-gray-800 underline hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-400 rounded">
+							{{ function('__', 'Add another image', 'adtrak') }}
+						</button>
+					</p>
+
+					<button type="submit" class="w-full md:w-auto px-5 py-2.5 rounded-md bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
+						{{ function('__', 'Upload', 'adtrak') }}
+					</button>
+				</form>
+
+				<p class="mt-6 text-sm text-gray-500">
+					<a href="{{ function('remove_query_arg', ['claim_session', 'upload_err', 'upload_ok', 'lookup_err'], false) }}" class="text-gray-700 underline hover:text-gray-900">{{ function('__', 'Search for a different claim', 'adtrak') }}</a>
+				</p>
+			</div>
+
+		{% else %}
+
+			<div class="max-w-xl mx-auto p-6 md:p-8 bg-white border border-gray-200 rounded-lg shadow-sm">
+				{% if claim_lookup_enabled|default(false) == false %}
+					<div class="mb-4 p-3 rounded-md bg-amber-50 text-amber-900 text-sm border border-amber-100" role="alert">
+						{{ function('__', 'Claim lookup requires the Optima Claims Sync plugin to be active.', 'adtrak') }}
+					</div>
+				{% endif %}
+				<h2 class="text-xl font-bold text-gray-900 mb-2">{{ function('__', 'Customer Document Portal', 'adtrak') }}</h2>
+				<p class="text-gray-600 text-sm mb-6">{{ function('__', 'Enter your claim ID and vehicle registration number below to locate your claim.', 'adtrak') }}</p>
+
+				{% if lookup_error_message %}
+					<div class="mb-4 p-3 rounded-md bg-red-50 text-red-800 text-sm border border-red-100" role="alert">
+						{{ lookup_error_message }}
+					</div>
+				{% endif %}
+
+				<form method="post" action="" class="space-y-6">
+					<input type="hidden" name="optima_claim_lookup_submit" value="1" />
+					{{ function('wp_nonce_field', 'optima_claim_lookup', 'optima_claim_lookup_nonce', true, false) }}
+
+					<div>
+						<label for="claimable_id" class="block text-sm font-medium text-gray-700 mb-1">{{ function('__', 'Claim ID', 'adtrak') }}</label>
+						<input
+							type="text"
+							name="claimable_id"
+							id="claimable_id"
+							autocomplete="off"
+							required
+							class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+						/>
+					</div>
+
+					<div>
+						<label for="subject_registration_number" class="block text-sm font-medium text-gray-700 mb-1">{{ function('__', 'Registration number', 'adtrak') }}</label>
+						<input
+							type="text"
+							name="subject_registration_number"
+							id="subject_registration_number"
+							autocomplete="off"
+							required
+							class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+						/>
+					</div>
+
+					<button type="submit" class="w-full md:w-auto px-5 py-2.5 rounded-md bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" {% if claim_lookup_enabled|default(false) == false %}disabled{% endif %}>
+						{{ function('__', 'Continue', 'adtrak') }}
+					</button>
+				</form>
+			</div>
+
+		{% endif %}
+
+	</div>
+
+</section>
