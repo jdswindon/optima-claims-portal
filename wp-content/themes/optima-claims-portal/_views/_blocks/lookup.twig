@@ -17,8 +17,8 @@
 		{% if claim_upload_ready|default(false) %}
 
 			<div class="max-w-xl mx-auto p-6 md:p-8 bg-white border border-gray-200 rounded-lg shadow-sm">
-				<h2 class="text-xl font-bold text-gray-900 mb-2">{{ function('__', 'Upload images', 'adtrak') }}</h2>
-				<p class="text-gray-600 text-sm mb-6">{{ function('__', 'Your claim was found. Add each photo and a short description. Use "Add another image" for more than one file.', 'adtrak') }}</p>
+				<h2 class="text-xl font-bold text-gray-900 mb-2">{{ function('__', 'Your claim was found!', 'adtrak') }}</h2>
+				<p class="text-gray-600 text-sm mb-6">{{ function('__', 'Upload images - add each photo and a short description. Use "Add another image" for more than one file.', 'adtrak') }}</p>
 
 				{% if upload_error_message %}
 					<div class="mb-4 p-3 rounded-md bg-red-50 text-red-800 text-sm border border-red-100" role="alert">
@@ -136,6 +136,11 @@
 					<button type="submit" class="w-full md:w-auto px-5 py-2.5 rounded-md bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" {% if claim_lookup_enabled|default(false) == false %}disabled{% endif %}>
 						{{ function('__', 'Continue', 'adtrak') }}
 					</button>
+					<div>
+						<h3 class="text-lg font-bold text-gray-900 mb-2">{{ function('__', 'Test Details (for testing purposes only)', 'adtrak') }}</h3>
+						<p class="text-gray-600 text-sm">{{ function('__', 'Claim ID: 5514', 'adtrak') }}</p>
+						<p class="text-gray-600 text-sm">{{ function('__', 'Registration: X935 HTE', 'adtrak') }}</p>
+					</div>
 				</form>
 			</div>
 
